@@ -705,6 +705,7 @@ def training_loop(config):
             resume_step -= starting_epoch * len(train_dataloader)
 
     checkpoint = None
+    print("Starting training")
     for epoch in range(starting_epoch, args.num_train_epochs):
         model.train()
         total_loss = 0
@@ -714,8 +715,6 @@ def training_loop(config):
                 if resume_step is not None and step < resume_step:
                     completed_steps += 1
                     continue
-
-            print(f"Starting step: {step}/{args.max_train_steps}")
 
             outputs = model(**batch)
             loss = outputs.loss
@@ -768,6 +767,8 @@ def training_loop(config):
             best_metric_checkpoint = os.path.join(args.output_dir, str(epoch))
             accelerator.print(f"New best metric: {best_metric} at epoch {epoch}")
             accelerator.print(f"best_metric_checkpoint: {best_metric_checkpoint}")
+        
+        print(f"Completed epochs: {epoch}/{args.num_train_epochs}")
 
     # New Code #
     # Evaluates using the best checkpoint
