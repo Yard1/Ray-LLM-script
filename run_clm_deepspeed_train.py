@@ -22,6 +22,9 @@ https://huggingface.co/models?filter=text-generation
 """
 # You can also adapt this script on your own causal language modeling task. Pointers for this are left as comments.
 
+# Adapted to work with Ray
+# original script: https://github.com/huggingface/accelerate/blob/main/examples/by_feature/deepspeed_with_config_support.py
+
 import ray
 
 from ray.train.torch import TorchTrainer

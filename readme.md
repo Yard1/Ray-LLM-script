@@ -1,6 +1,6 @@
 # Fine-tuning Transformers on Ray Train
 
-This repository contains a modified version of the `run_clm.py` script allowing it to leverage Ray Train for easy HF Accelerate (w/ DeepSpeed) & Transformers fine-tuning in on a distributed Ray cluster.
+This repository contains a modified version of the [`deepspeed_with_config_support.py` script](https://github.com/huggingface/accelerate/blob/main/examples/by_feature/deepspeed_with_config_support.py) allowing it to leverage Ray Train for easy HF Accelerate w/ DeepSpeed Transformers fine-tuning in on a distributed Ray cluster.
 
 ## Instructions
 
