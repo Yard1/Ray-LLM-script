@@ -768,7 +768,7 @@ def training_loop(config):
             accelerator.print(f"New best metric: {best_metric} at epoch {epoch}")
             accelerator.print(f"best_metric_checkpoint: {best_metric_checkpoint}")
         
-        print(f"Completed epochs: {epoch}/{args.num_train_epochs}")
+        print(f"Completed epochs: {epoch+1}/{args.num_train_epochs}")
 
     # New Code #
     # Evaluates using the best checkpoint
